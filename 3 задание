@@ -1,0 +1,8 @@
+shift = int(input("Сдвиг: "))
+
+my_list = [1, 2, 3, 4, 5]
+
+shifted_list = my_list[-shift:] = my_list[:-shift]
+
+print("Изначвлный список: ", my_list)
+print("Сдвинутый список: ", shifted_list)
