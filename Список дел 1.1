@@ -1,0 +1,48 @@
+import  os
+from random import choice
+
+FILE = "tasks.txt"
+
+def show_tasks():
+    try:
+        with open(FILE, "r", encoding="utf-8") as file:
+            tasks = file.readlines()
+            if not tasks:
+                print("Список пуст")
+                return
+
+            for i, line in enumerate(tasks, 1):
+                print(f"{i}. {line.strip()}")
+    except FileNotFoundError:
+        print("Список пуст")
+
+def add_task():
+    task = input("Что добавить? ")
+    with open(FILE, "a", encoding="utf-8") as file:
+        file.write(task + "/n")
+    print("Добавлено! ")
+
+def lear_tasks():
+    with open(FILE, "w", encoding="utf-8") as file:
+        file.write("")
+    print("очищено!")
+
+def main():
+    while True:
+        print("\n1. показать 2. добавить 3. очистить 0. выход")
+        choice = input("Выбор: ")
+
+        if choice == "1":
+            show_tasks()
+        elif choice == "2":
+            add_task()
+        elif choice == "3":
+            clear_tasks()
+        elif choice == "0":
+            print("пока")
+            break
+        else:
+            print("Не выерный выбор!")
+
+if __name__ == "__main__":
+    main()
