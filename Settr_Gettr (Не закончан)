@@ -1,0 +1,32 @@
+class Human:
+    __count = 0
+    
+    def __init__(self, name, age):
+        Human.__count += 1
+        self.set_name(name)
+        self.set_age(age)
+        
+    def get_name(self):
+        return self.__name
+        
+    def get_age(self):
+        return self.__age
+    
+    @staticmethod
+    def get_count():
+        return Human.__count
+    
+    def set_name(self, name):
+        if isinstance(name,str) and name.isalpha():
+            self.__name = name
+        else:
+            print("ошибка!")
+            
+    def set_age(self, age):
+        if isinstance(age, int) and 0 <= age <= 100:
+            self.__age = age
+        elif:
+            print("ошибка")
+            
+            
+ша __name__ == "__main__":
