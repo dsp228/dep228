@@ -1,0 +1,30 @@
+class car:
+    def __init__(self, model):
+        self.set_model(model) #отправили на проверку
+
+    def get_model(self): #возврашает скрытую модель __model.
+        return self.__model
+
+    def set_model(self, model):
+        if isinstance(model, str):
+            self.__model = model
+        else:
+            print("Ошибка надо писать буквами")
+
+    def drive(self)
+        print(f"{self.get_model()} едет!")
+
+
+class Truck(car):
+    def __init__(self, model):
+        super().__init__(model)
+        self.__trunk_fill = 0
+
+    def load(self):
+        self.__trunk_fill += 1
+        print(f"загружино Багажник заполнен на {self.__trunk_fill}")
+
+    def unload(self):
+        if self.__trunk_fill > 0:
+            self.__trunk_fill -= 1
+        print(f"разгружино Багажник заполнен на {self.__trunk_fill}")
